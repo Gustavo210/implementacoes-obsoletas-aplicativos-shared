@@ -21,5 +21,7 @@ export * from "./components/listas/ListaCadastroLoginItem";
 export * from "./components/listas/utils/ListaVazia";
 export * from "./components/modais/fullscreen/ModalAppFull";
 export * from "./components/modais/fullscreen/ModalFull";
+export * from "./components/modais/modalHalf/ModalApp";
+export * from "./components/modais/modalHalf/ModalApp2";
 export * from "./components/modais/fullscreen/ModalFullVerificarSenha";
 export * from "./components/unform/TextInputUnform";
