@@ -1,22 +1,32 @@
-import React, { PropsWithChildren } from 'react'
-import { Modal } from 'react-native'
-import Feather from 'react-native-vector-icons/Feather'
-import styled from 'styled-components/native'
+import React, { PropsWithChildren } from "react";
+import { Modal } from "react-native";
+import Feather from "react-native-vector-icons/Feather";
+import styled, { NativeTarget } from "styled-components/native";
 
-import { Botao } from '../../botoes/Botao'
+import { Botao } from "../../botoes/Botao";
 
 export interface PropsDialog {
-  fecharModal?(): void
-  mostraFecharModal?: boolean
-  estaVisivel?: boolean
-  titulo?: string
+  fecharModal?(): void;
+  mostraFecharModal?: boolean;
+  estaVisivel?: boolean;
+  titulo?: string;
 }
 export function Dialog(props: PropsWithChildren<PropsDialog>) {
   return (
-    <Modal animationType="slide" transparent statusBarTranslucent visible={props.estaVisivel}>
+    <Modal
+      animationType="slide"
+      transparent
+      statusBarTranslucent
+      visible={props.estaVisivel}
+    >
       <ContainerCenter>
         <ContainerBorda {...props}>
-          <Container bounces={false} alwaysBounceHorizontal={false} alwaysBounceVertical={false} {...props}>
+          <Container
+            bounces={false}
+            alwaysBounceHorizontal={false}
+            alwaysBounceVertical={false}
+            {...props}
+          >
             <>
               {props.mostraFecharModal && (
                 <BotaoFechar onPress={props.fecharModal}>
@@ -30,7 +40,7 @@ export function Dialog(props: PropsWithChildren<PropsDialog>) {
         </ContainerBorda>
       </ContainerCenter>
     </Modal>
-  )
+  );
 }
 
 const BotaoFechar = styled(Botao)`
@@ -40,13 +50,13 @@ const BotaoFechar = styled(Botao)`
   top: 0px;
 
   background-color: transparent;
-`
+`;
 
 const ContainerCenter = styled.View`
   justify-content: center;
   align-items: center;
   flex: 1;
-`
+`;
 const ContainerBorda = styled.View`
   background-color: ${({ theme }) => theme.cores.branco};
   padding: 15px;
@@ -58,7 +68,7 @@ const ContainerBorda = styled.View`
   width: ${({ theme }) => theme.layout.width(98)}px;
 
   border-radius: 5px;
-`
+`;
 const Titulo = styled.Text`
   font-size: ${({ theme }) => theme.fonts.size(20)}px;
   font-weight: 600;
@@ -67,7 +77,7 @@ const Titulo = styled.Text`
   padding-bottom: 10px;
 
   width: 90%;
-`
+`;
 
 const Container = styled.ScrollView`
   background-color: ${({ theme }) => theme.cores.branco};
@@ -76,7 +86,7 @@ const Container = styled.ScrollView`
   width: ${({ theme }) => theme.layout.width(90)}px;
 
   overflow: hidden;
-`
-const Icon = styled(Feather)`
+`;
+const Icon = styled(Feather as NativeTarget)`
   font-size: ${({ theme }) => theme.fonts.size(20)}px;
-`
+`;

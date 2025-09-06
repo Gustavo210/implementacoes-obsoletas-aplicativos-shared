@@ -132,7 +132,7 @@ export function Camera(props: PropsCamera) {
   const [cameraProcessando, setCameraProcessando] = useState<boolean>(false);
   const [cameraTravada, setCameraTravada] = useState<boolean>(false);
   const [_ignorado, requestPermission] = useCameraPermissions();
-  const timeoutRef = useRef<number | null>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     pedePermissao();

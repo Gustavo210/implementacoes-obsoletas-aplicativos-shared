@@ -1,11 +1,11 @@
 import FeatherIcon from "react-native-vector-icons/Feather";
-import styled from "styled-components/native";
+import styled, { NativeTarget } from "styled-components/native";
 import { legacyTheme } from "../../../../utils/legacyTheme";
 
 export function CameraTravada() {
   return (
     <Container>
-      <FeatherIcon
+      <Icon
         name="camera-off"
         size={100}
         style={{ color: legacyTheme.cores.backgroundGray }}
@@ -30,3 +30,4 @@ const Container = styled.View`
 const TextoFooterCamera = styled.Text`
   color: ${({ theme }) => theme.cores.texto};
 `;
+const Icon = styled(FeatherIcon as NativeTarget)``;
