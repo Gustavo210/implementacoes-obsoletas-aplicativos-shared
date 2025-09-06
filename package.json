@@ -1,13 +1,30 @@
 {
   "name": "implementacoes-obsoletas-aplicativos-shared",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "main": "index.tsx",
+  "peerDependencies": {
+    "react": "19.0.0",
+    "react-native": "0.79.5",
+    "expo": "~53.0.22",
+    "expo-constants": "~17.1.7",
+    "@unform/core": "^2.1.6",
+    "@unform/mobile": "^2.1.6",
+    "expo-router": "~5.1.5",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-vector-icons": "^9.2.0",
+    "@shopify/flash-list": "1.7.6",
+    "styled-components": "^6.1.19",
+    "@react-navigation/native": "^6.1.6",
+    "expo-camera": "~16.1.11",
+    "yup": "^1.7.0",
+    "react-native-root-toast": "^3.3.0"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "packageManager": "pnpm@10.11.0"
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/react": "~19.0.10",
+    "@types/react-native-vector-icons": "^6.4.9",
+    "typescript": "~5.8.3"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
