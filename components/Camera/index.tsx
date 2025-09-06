@@ -313,11 +313,9 @@ export function Camera(props: PropsCamera) {
                 <Loading color={legacyTheme.cores.azul100} size={100} />
               )}
               {cameraTravada && !cameraProcessando && <CameraTravada />}
-              {/* {!cameraProcessando && !cameraTravada && (
-                <AlvoImage
-                  source={require("../../../assets/images/alvo.png")}
-                />
-              )} */}
+              {!cameraProcessando && !cameraTravada && (
+                <AlvoImage source={require("../../assets/image/alvo.png")} />
+              )}
             </AlvoContainer>
           </BotaoAtivador>
         )}
