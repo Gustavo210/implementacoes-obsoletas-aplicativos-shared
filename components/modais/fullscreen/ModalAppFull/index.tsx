@@ -5,7 +5,7 @@ import styled, { NativeTarget } from "styled-components/native";
 
 import { Rotulo } from "../../../Rotulo";
 import { Spacer } from "../../../Spacer";
-import BotaoFecharModalAppFull from "../../../botoes/BotaoFecharModalAppFull";
+import { BotaoFecharModalAppFull } from "../../../botoes/BotaoFecharModalAppFull";
 import { TypeTipoAlerta } from "../../modalHalf/ModalApp";
 
 export type PropsInteracaoSuspensaPadrao = {
