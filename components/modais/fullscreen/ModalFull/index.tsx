@@ -5,6 +5,8 @@ import styled from "styled-components/native";
 import { Rotulo } from "../../../Rotulo";
 import { Botao } from "../../../botoes/Botao";
 import { PropsInteracaoSuspensaPadrao } from "../ModalAppFull";
+import { useModalFullApp } from "../../../../hooks/useModalFullApp";
+import { useEffect } from "react";
 
 export interface PropsModalFull
   extends PropsInteracaoSuspensaPadrao,
@@ -16,17 +18,19 @@ export interface PropsModalFull
 }
 
 export function ModalFull(props: PropsModalFull) {
-  // const modal = useModalFullApp()
-  // useEffect(() => {
-  //   if (props?.visivel) {
-  //     modal.notificaModalAberto('ABERTO')
-  //   } else {
-  //     modal.notificaModalAberto('FECHADO')
-  //   }
-  //   return () => {
-  //     modal.notificaModalAberto('FECHADO')
-  //   }
-  // }, [props?.visivel])
+  const modal = useModalFullApp();
+
+  useEffect(() => {
+    if (props?.visivel) {
+      modal.notificaModalAberto("ABERTO");
+    } else {
+      modal.notificaModalAberto("FECHADO");
+    }
+    return () => {
+      modal.notificaModalAberto("FECHADO");
+    };
+  }, [props?.visivel]);
+
   return (
     <Modal
       animationType="slide"

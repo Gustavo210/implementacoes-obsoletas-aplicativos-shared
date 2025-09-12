@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useEffect } from "react";
 import { Modal } from "react-native";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import styled, { NativeTarget } from "styled-components/native";
@@ -7,6 +7,7 @@ import { Rotulo } from "../../../Rotulo";
 import { Spacer } from "../../../Spacer";
 import { BotaoFecharModalAppFull } from "../../../botoes/BotaoFecharModalAppFull";
 import { TypeTipoAlerta } from "../../modalHalf/ModalApp";
+import { useModalFullApp } from "../../../../hooks/useModalFullApp";
 
 export type PropsInteracaoSuspensaPadrao = {
   visivel: boolean;
@@ -22,17 +23,19 @@ export type ModalAppFullPropsType = {
 };
 
 export function ModalAppFull(props: PropsWithChildren<ModalAppFullPropsType>) {
-  // const modal = useModalFullApp()
-  // useEffect(() => {
-  //   if (props?.visivel) {
-  //     modal.notificaModalAberto('ABERTO')
-  //   } else {
-  //     modal.notificaModalAberto('FECHADO')
-  //   }
-  //   return () => {
-  //     modal.notificaModalAberto('FECHADO')
-  //   }
-  // }, [props?.visivel])
+  const modal = useModalFullApp();
+
+  useEffect(() => {
+    if (props?.visivel) {
+      modal.notificaModalAberto("ABERTO");
+    } else {
+      modal.notificaModalAberto("FECHADO");
+    }
+    return () => {
+      modal.notificaModalAberto("FECHADO");
+    };
+  }, [props?.visivel]);
+
   let icone = "";
   switch (props.tipo) {
     case "AVISO_SUCESSO":
@@ -53,7 +56,7 @@ export function ModalAppFull(props: PropsWithChildren<ModalAppFullPropsType>) {
 
   function funcaoFechar() {
     props.fechar?.();
-    // modal.notificaModalAberto('FECHADO')
+    modal.notificaModalAberto("FECHADO");
   }
   return (
     <Modal

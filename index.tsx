@@ -25,3 +25,6 @@ export * from "./components/modais/modalHalf/ModalApp";
 export * from "./components/modais/modalHalf/ModalApp2";
 export * from "./components/modais/fullscreen/ModalFullVerificarSenha";
 export * from "./components/unform/TextInputUnform";
+
+export * from "./hooks/useModalFullApp";
+export * from "./hooks/useModalFullApp/provider";

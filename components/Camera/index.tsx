@@ -15,6 +15,7 @@ import { CameraPausada } from "./components/CameraPausada";
 import { CameraTravada } from "./components/CameraTravada";
 import { CardInfo } from "./components/CardInfo";
 import { legacyTheme } from "../../utils/legacyTheme";
+import { useModalFullApp } from "../../hooks/useModalFullApp";
 
 type PropsLeitura =
   | "volume entrega"
@@ -126,7 +127,7 @@ export function converteCodigoLido(dado: string) {
 export function Camera(props: PropsCamera) {
   const foco = useIsFocused();
   const navigation = useNavigation();
-  // const modal = useModalFullApp();
+  const modal = useModalFullApp();
   const [estadoDaCamera, setEstadoDaCamera] =
     useState<TypeEstadoDaCamera>("SEM_PERMISSAO");
   const [cameraProcessando, setCameraProcessando] = useState<boolean>(false);
@@ -150,12 +151,12 @@ export function Camera(props: PropsCamera) {
     setCameraProcessando(!!props.travaLeitor);
   }, [props.travaLeitor]);
 
-  // useEffect(() => {
-  //   cancelaTemporizadorInatividade();
-  //   if (modal.estadoDoModal === "FECHADO") {
-  //     iniciaTemporizadorInatividade();
-  //   }
-  // }, [modal.estadoDoModal]);
+  useEffect(() => {
+    cancelaTemporizadorInatividade();
+    if (modal.estadoDoModal === "FECHADO") {
+      iniciaTemporizadorInatividade();
+    }
+  }, [modal.estadoDoModal]);
 
   function iniciaTemporizadorInatividade() {
     if (timeoutRef.current) {
