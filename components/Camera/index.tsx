@@ -292,7 +292,7 @@ export function Camera(props: PropsCamera) {
 
   return (
     <Container>
-      {estadoDaCamera === "DISPONIVEL" && (
+      {modal.estadoDoModal === "FECHADO" && estadoDaCamera === "DISPONIVEL" && (
         <CameraScreen facing="back" onBarcodeScanned={beforeOnBarCodeScanned} />
       )}
       {estadoDaCamera === "CAMERA_PAUSADA" && (
