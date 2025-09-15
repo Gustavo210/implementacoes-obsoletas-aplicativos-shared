@@ -79,7 +79,14 @@ export function TextInputUnform(props: InputProps) {
       <ContainerInput
         style={[
           { borderWidth: 1, borderColor: "transparent" },
-          error ? [styles.errorBorder] : {},
+          error
+            ? [props?.errorInputStyles, props.style, styles.errorBorder]
+            : [
+                props.style,
+                {
+                  padding: 0,
+                },
+              ],
         ]}
       >
         <Input
