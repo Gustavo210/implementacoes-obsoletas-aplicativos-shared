@@ -6,8 +6,8 @@ import { UseModalFullAppProvider } from './context'
 type PropsEstadoDoModal = 'ABERTO' | 'FECHADO'
 
 export interface PropsModalFullApp {
-  configuraModal: (dados: ModalAppFullPropsType | null) => void
-  notificaModalAberto: (estado: PropsEstadoDoModal) => void
+  configuraModal(dados: ModalAppFullPropsType | null): void
+  notificaModalAberto(estado: PropsEstadoDoModal): void
   estadoDoModal: PropsEstadoDoModal
 }
 export function ModalFullAppProvider({ children }: PropsWithChildren) {

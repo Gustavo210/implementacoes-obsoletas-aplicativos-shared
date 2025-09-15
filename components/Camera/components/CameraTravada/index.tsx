@@ -1,20 +1,15 @@
-import FeatherIcon from "react-native-vector-icons/Feather";
-import styled, { NativeTarget } from "styled-components/native";
-import { legacyTheme } from "../../../../utils/legacyTheme";
+import FeatherIcon from 'react-native-vector-icons/Feather'
+import styled, { NativeTarget } from 'styled-components/native'
+
+import { legacyTheme } from '../../../../utils/legacyTheme'
 
 export function CameraTravada() {
   return (
     <Container>
-      <Icon
-        name="camera-off"
-        size={100}
-        style={{ color: legacyTheme.cores.backgroundGray }}
-      />
-      <TextoFooterCamera>
-        Pressione para a tela ativar a câmera
-      </TextoFooterCamera>
+      <Icon name="camera-off" size={100} style={{ color: legacyTheme.cores.backgroundGray }} />
+      <TextoFooterCamera>Pressione para a tela ativar a câmera</TextoFooterCamera>
     </Container>
-  );
+  )
 }
 
 const Container = styled.View`
@@ -26,8 +21,8 @@ const Container = styled.View`
   align-items: center;
   aspect-ratio: 1 / 1;
   opacity: 0.8;
-`;
+`
 const TextoFooterCamera = styled.Text`
   color: ${({ theme }) => theme.cores.texto};
-`;
-const Icon = styled(FeatherIcon as NativeTarget)``;
+`
+const Icon = styled(FeatherIcon as NativeTarget)``
