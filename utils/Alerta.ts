@@ -1,14 +1,7 @@
-import Toast from 'react-native-root-toast'
+import { ToastAndroid } from 'react-native'
 
 export const Alerta = {
-  Toast(message: string, delay = 100): void {
-    Toast.show(message, {
-      duration: Toast.durations.LONG,
-      position: Toast.positions.BOTTOM,
-      shadow: false,
-      animation: true,
-      hideOnPress: true,
-      delay
-    })
+  Toast(message: string): void {
+    ToastAndroid.show(message, ToastAndroid.SHORT)
   }
 }
