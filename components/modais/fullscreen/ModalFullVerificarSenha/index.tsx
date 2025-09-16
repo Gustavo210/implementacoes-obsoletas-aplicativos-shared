@@ -83,6 +83,7 @@ const Container = styled(ModalFull)`
 const Input = styled(TextInputUnform)`
   height: ${({ theme }) => theme.layout.height(7)}px;
   border-radius: 5px;
+  color: ${({ theme }) => theme.cores.preto};
   background-color: ${({ theme }) => theme.cores.branco90};
   border: 1px solid ${({ theme }) => theme.cores.bege10};
 `

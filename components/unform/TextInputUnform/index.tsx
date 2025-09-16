@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
 const Input = styled(TextInput)`
   flex: 1;
   min-height: ${({ theme }) => theme.layout.height(6)}px;
+  color: ${({ theme }) => theme.cores.preto};
 `
 const Container = styled.View``
 const ContainerInput = styled.View`

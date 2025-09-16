@@ -60,6 +60,7 @@ const Container = styled.View`
 const Input = styled.TextInput`
   flex: 1;
   padding: 8px;
+  color: ${({ theme }) => theme.cores.preto};
 `
 const Icon = styled(FeatherIcon as NativeTarget)`
   font-size: ${({ theme }) => theme.fonts.size(25)}px;
