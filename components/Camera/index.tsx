@@ -2,7 +2,7 @@
 import { StackActions, useIsFocused, useNavigation } from '@react-navigation/native'
 import type { BarcodeScanningResult, CameraViewProps } from 'expo-camera'
 import { CameraView, useCameraPermissions } from 'expo-camera'
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import { Alert, Linking } from 'react-native'
 import styled from 'styled-components/native'
 
@@ -47,7 +47,7 @@ type TypeEstadoDaCamera = 'SEM_PERMISSAO' | 'DISPONIVEL' | 'INDISPONIVEL' | 'CAM
 
 export function verificaLeituraScanner(dado: string, type: string): PropsLeitura {
   let retorno: PropsLeitura
-  if (process.env.NODE_ENV === 'development') {
+  if (!process.env.EXPO_PUBLIC_API_URL?.includes('https')) {
     console.log('\x1b[32m', 'LEITURA', dado)
     console.log('\x1b[32m', 'TIPO DE LEITURA', type)
   }
@@ -78,7 +78,7 @@ export function verificaLeituraScanner(dado: string, type: string): PropsLeitura
       retorno = 'codigo nao identificado'
       break
   }
-  if (process.env.NODE_ENV === 'development') {
+  if (!process.env.EXPO_PUBLIC_API_URL?.includes('https')) {
     console.log('\x1b[32m', 'RETORNO LEITURA', type)
     console.log('\x1b[0m')
   }

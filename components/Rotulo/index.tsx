@@ -1,12 +1,11 @@
 import constants from 'expo-constants'
 import { usePathname } from 'expo-router'
-import React from 'react'
 import styled from 'styled-components/native'
 
 export function Rotulo() {
   const pathName = usePathname()
 
-  const ehDev = process.env.NODE_ENV === 'development'
+  const ehDev = !process.env.EXPO_PUBLIC_API_URL?.includes('https')
 
   return (
     <ContainerVersaoDoApp ehDev={ehDev}>
